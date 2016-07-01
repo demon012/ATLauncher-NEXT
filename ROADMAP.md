@@ -4,7 +4,7 @@ This file contains our roadmap towards the release and beyond for ATLauncher NEX
 ## Planning phase
 The planning phase is the initial phase of the project and involves generation of ideas and gathering feedback towards the direction of the project including, but not limited to:
 
-- Frontend framework to use [[#1](https://github.com/ATLauncher/ATLauncher-NEXT/issues/1)]
+- ~~Frontend framework to use [[#1](https://github.com/ATLauncher/ATLauncher-NEXT/issues/1)]~~
 - Application wrapper to use [[#2](https://github.com/ATLauncher/ATLauncher-NEXT/issues/2)]
 - Application bootstrap/distribution [[#3](https://github.com/ATLauncher/ATLauncher-NEXT/issues/3)]
 - Frontend UI framework to use [[#4](https://github.com/ATLauncher/ATLauncher-NEXT/issues/4)]
