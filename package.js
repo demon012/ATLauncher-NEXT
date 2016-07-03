@@ -1,6 +1,10 @@
 require('babel-polyfill');
 
+const fs = require('fs');
+const rimraf = require('rimraf');
+const archiver = require('archiver');
 const packager = require('electron-packager');
+
 const pkg = require('./package.json');
 
 console.log('start pack...');
@@ -47,7 +51,7 @@ function pack(plat, arch, cb) {
 
     let osOptions = {};
 
-    switch(plat) {
+    switch (plat) {
         case 'linux':
             break;
         case 'win32':
@@ -64,7 +68,47 @@ function pack(plat, arch, cb) {
             break;
     }
 
-    packager(Object.assign({}, options, osOptions), cb);
+    if (!fs.existsSync('./dist')) {
+        fs.mkdirSync('./dist');
+    }
+
+    packager(Object.assign({}, options, osOptions), (err) => {
+        if (err) {
+            return cb(err);
+        }
+
+        const outputZip = `./dist/${pkg.productName}-${pkg.version}-${plat}-${arch}.zip`;
+
+        if (fs.existsSync(outputZip)) {
+            fs.unlinkSync(outputZip);
+        }
+
+        let output = fs.createWriteStream(outputZip);
+
+        output.on('open', () => {
+            let archive = archiver('zip');
+            const dirToZip = `./dist/${pkg.productName}-${plat}-${arch}`;
+
+            output.on('close', () => {
+                rimraf(dirToZip, cb);
+            });
+
+            archive.on('error', (err) => {
+                rimraf(dirToZip, () => cb(err));
+            });
+
+            archive.pipe(output);
+            archive.bulk([
+                {
+                    expand: true,
+                    cwd: dirToZip,
+                    src: ['**'],
+                    dest: './'
+                }
+            ]);
+            archive.finalize();
+        });
+    });
 }
 
 function log(plat, arch) {
