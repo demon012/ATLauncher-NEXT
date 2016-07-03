@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ATLauncher/ATLauncher-NEXT/tree/initial-code.svg?style=svg)](https://circleci.com/gh/ATLauncher/ATLauncher-NEXT/tree/initial-code)
+
 # ATLauncher NEXT
 ATLauncher NEXT is the next iteration of ATLauncher.
 

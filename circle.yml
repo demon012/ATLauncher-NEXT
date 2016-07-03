@@ -1,0 +1,23 @@
+machine:
+  node:
+    version: 4.3.0
+
+dependencies:
+  override:
+    - npm install
+    - npm --prefix ./app install ./app
+
+test:
+  override:
+#     - npm test
+     - npm run dist
+
+general:
+  branches:
+    only:
+      - initial-code
+      - /features\/.*/
+      - /releases\/.*/
+      - /hotfixes\/.*/
+  artifacts:
+    - "dist"
