@@ -39,13 +39,7 @@ As you edit the application files, the Electron window will hot reload with the 
 TBD
 
 ### Building
-To build this project for distribution simply run `npm run dist:all` which will create the packages for all the different systems in the **dist/** directory.
-
-Please note that you must build OSX packages on OSX.
-
-If you only want to build the packages for a specific OS then you can run `npm run dist:windows`, `npm run dist:linux` or `npm run dist:osx`.
-
-If you want to build only the basic structure but not package them up to exe/dmg etc, then you can run the above commands but with **pack:** instead of **dist:**.
+To build this project for distribution simply run `npm run dist` which will create the packages for all the different systems in the **dist/** directory.
 
 ## Contributing
 If you wish to contribute to this repository in any way, take a look at [CONTRIBUTING.md](CONTRIBUTING.md).

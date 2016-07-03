@@ -1,6 +1,5 @@
 {
     "name": "atlauncher-next",
-    "productName": "ATLauncher NEXT",
     "version": "0.0.1",
     "description": "ATLauncher NEXT is the next iteration of ATLauncher.",
     "main": "main.js",
@@ -12,14 +11,7 @@
         "start": "cross-env NODE_ENV=production electron ./app/main.js",
         "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main.development",
         "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
-        "dist:all": "npm run build && build -wlm",
-        "dist:linux": "npm run build && build -l",
-        "dist:windows": "npm run build && build -w",
-        "dist:osx": "npm run build && build -m",
-        "pack:all": "npm run build && build --dir -mwl",
-        "pack:linux": "npm run build && build --dir -l",
-        "pack:windows": "npm run build && build --dir -w",
-        "pack:osx": "npm run build && build --dir -m"
+        "dist": "npm run build && rimraf dist/ && cross-env NODE_ENV=production node -r babel-register package.js"
     },
     "bin": {
         "electron": "./node_modules/.bin/electron"
@@ -49,7 +41,12 @@
         "node": "4.x || 5.x || 6.x",
         "npm": "2.x || 3.x"
     },
+    "productName": "ATLauncher NEXT",
+    "productCopyright": "Copyright 2016 ATLauncher - Licensed under MIT",
+    "electronVersion": "1.2.5",
     "devDependencies": {
+        "babel-core": "^6.10.4",
+        "babel-loader": "^6.2.4",
         "babel-plugin-add-module-exports": "^0.2.1",
         "babel-plugin-transform-remove-console": "^6.8.0",
         "babel-plugin-transform-remove-debugger": "^6.8.0",
@@ -62,12 +59,13 @@
         "babel-register": "^6.9.0",
         "chai": "^3.5.0",
         "concurrently": "^2.1.0",
+        "copyfiles": "^1.0.0",
         "cross-env": "^1.0.8",
         "css-loader": "^0.23.1",
         "devtron": "^1.2.1",
-        "electron-builder": "^5.10.3",
         "electron-debug": "^1.0.1",
         "electron-devtools-installer": "^1.1.5",
+        "electron-packager": "^7.1.0",
         "electron-prebuilt": "^1.2.5",
         "eslint": "^3.0.0",
         "express": "^4.14.0",
@@ -75,15 +73,12 @@
         "less": "^2.7.1",
         "less-loader": "^2.2.3",
         "mocha": "^2.5.3",
+        "rimraf": "^2.5.2",
         "sinon": "^1.17.4",
         "source-map-support": "^0.4.1",
         "style-loader": "^0.13.1",
+        "webpack": "^1.13.1"
         "webpack-dev-middleware": "^1.6.1",
         "webpack-hot-middleware": "^2.12.0"
-    },
-    "dependencies": {
-        "babel-core": "^6.10.4",
-        "babel-loader": "^6.2.4",
-        "webpack": "^1.13.1"
     }
 }
