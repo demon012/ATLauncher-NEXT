@@ -6,6 +6,9 @@ ATLauncher NEXT is the next iteration of ATLauncher.
 ## Brief overview
 ATLauncher NEXT is a rewrite of ATLauncher. It's written in Javascript and uses Electron with ReactJS, Redux, Redux Sagas and Webpack.
 
+## Based on
+This is based on https://github.com/chentsulin/electron-react-boilerplate and used as a base to get up and running.
+
 ## Links
 - [ATLauncher Website](https://www.atlauncher.com)
 - [ATLauncher Discord](https://discordapp.com/invite/0eXDtXikrVAJffxY)

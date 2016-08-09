@@ -1,9 +1,8 @@
 import webpack from 'webpack';
+import merge from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
-export default {
-    ...baseConfig,
-
+export default merge(baseConfig, {
     entry: ['babel-polyfill', './main.production'],
 
     target: 'electron-main',
@@ -14,12 +13,10 @@ export default {
     },
 
     output: {
-        ...baseConfig.output,
         filename: './main.js'
     },
 
     plugins: [
-        ...baseConfig.plugins,
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 warnings: false
@@ -31,4 +28,4 @@ export default {
             }
         })
     ]
-};
+});

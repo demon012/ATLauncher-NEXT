@@ -1,8 +1,9 @@
 import webpack from 'webpack';
+import merge from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
-const config = {
-    ...baseConfig,
+export default merge(baseConfig, {
+    devtool: 'cheap-module-source-map',
 
     entry: './app/index',
 
@@ -21,6 +22,4 @@ const config = {
     ],
 
     target: 'electron-renderer'
-};
-
-export default config;
+});

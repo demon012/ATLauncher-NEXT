@@ -3,11 +3,7 @@
     "plugins": ["add-module-exports"],
     "env": {
         "production": {
-            "presets": ["react-optimize"],
-            "plugins": [
-                "babel-plugin-transform-remove-console",
-                "babel-plugin-transform-remove-debugger"
-            ]
+            "presets": ["react-optimize"]
         },
         "development": {
             "presets": ["react-hmre"]
