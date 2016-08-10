@@ -9,8 +9,8 @@ export default {
                 loader: 'babel'
             },
             {
-                test: /\.less/,
-                loader: 'style-loader!css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!less-loader'
+                test: /\.less$/,
+                loader: 'style-loader!css-loader!less-loader'
             },
             {
                 test: /\.json$/,

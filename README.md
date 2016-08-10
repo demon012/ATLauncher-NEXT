@@ -41,7 +41,15 @@ When you want to start development of ATLauncher-NEXT then you simply need to ru
 As you edit the application files, the Electron window will hot reload with the changes you made.
 
 ### Testing
-TBD
+There are two types of tests that can be run:
+
+ - Unit Tests are run using `npm run test` and will test all files in the app directory that end with `.spec.js` and are intended to test individual units of code such as components
+ - End to End tests are run using `npm run test-e2e` and will spin up the application using ChromeDriver and Spectron which will run the application as if it was run by an actual end user and spawn
+   windows and test that the application as a whole works as expected. These tests are defined in the `test/e2e.js` file.
+   
+All end to end tests should be written out in the test directory while all unit tests should be written next to each piece of code they're testing.
+
+Please note that in order to run end to end tests, the application must be built using `npm run build` and do require access to a display server. For running end to end tests on server environments.
 
 ### Building
 To build this project for distribution simply run `npm run dist` which will create the packages for all the different systems in the **dist/** directory.

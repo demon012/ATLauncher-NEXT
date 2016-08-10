@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 
-import '../styles/app.less';
+export default class App extends Component {
+    static propTypes = {
+        children: PropTypes.element.isRequired
+    };
 
-export default class App extends React.Component {
     render() {
         return (
-            <div className="app">
-                Hello, World!!!
+            <div>
+                {this.props.children}
             </div>
         );
     }
