@@ -22,7 +22,7 @@ dependencies:
 test:
   override:
      - npm test
-     - npm build
+     - npm run build
      - npm test-e2e
      - npm run dist
 
