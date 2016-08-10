@@ -9,8 +9,8 @@ dependencies:
     - sudo apt-get update
     - sudo apt-get install -y --install-recommends winehq-devel
     - sudo apt-get install -y xvfb
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
+    - export DISPLAY=:10
+    - sudo Xvfb :10 -ac
     - sleep 3
   override:
     - npm install
