@@ -14,22 +14,23 @@ dependencies:
         background: true
     - sleep 3
   override:
+    - npm prune
     - npm install
     - npm --prefix ./app install ./app
+    - npm --prefix ./app prune ./app
+    - npm run build
   cache_directories:
+    - "node_modules"
     - "app/node_modules"
-    - "~/.electron"
 
 test:
   override:
      - npm run test-ci:
          environment:
            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
-     - npm run build
      - npm run test-e2e-ci:
          environment:
            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
-     - npm run dist
 
 general:
   branches:
