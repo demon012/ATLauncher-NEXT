@@ -25,13 +25,13 @@ ATLauncher NEXT uses webpack to compile ES2015 syntax to something that can be r
 
  - webpack.config.base.js - this is the base webpack config of which all others will use. All the configs in this file will act as defaults and used in all other configs
  - webpack.config.development.js - this is the development config used when developing ATLauncher NEXT
- - webpack.config.electron.js - this is the Electron config which is used to compile the **main.production.js** file which is used by Electron as the main file it runs on start
+ - webpack.config.electron.js - this is the Electron config which is used to compile the **main.js** file which is used by Electron as the main file it runs on start
  - webpack.config.node.js - this is the NodeJS config for running the hot reloading server for when you're developing
  - webpack.config.production.js - this is the production config which is used to compile the main application in the **app/** directory into a bundle for use within the Electron app
  
 In order to run the Electron application 2 things need to be compiled by webpack into bundles which are stored (and gitignored) in the **app/** directory:
 
- - app/main.js - this is the main javascript file which Electron runs. It's build with `npm run build-main` and is built from the **main.production.js** file
+ - app/main.js - this is the main javascript file which Electron runs. It's build with `npm run build-main` and is built from the **main.js** file
  - app/bundle.js - this is the main applications javascript file which is included with script tags in the **app/app.html** file which Electron main.js file will load in the window. It's built with
                    `npm run build-app` and is built using the **app/index.js** entrypoint
 

@@ -3,7 +3,7 @@ import merge from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
 export default merge(baseConfig, {
-    entry: ['babel-polyfill', './main.production'],
+    entry: ['babel-polyfill', './main'],
 
     target: 'electron-main',
 

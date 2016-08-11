@@ -12,7 +12,7 @@
     "hot-server": "node -r babel-register server.js",
     "lint": "eslint app *.js",
     "start": "cross-env NODE_ENV=production electron ./app/main.js",
-    "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main.development",
+    "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main",
     "test": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js app/**/*.spec.js",
     "test-ci": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --reporter mocha-junit-reporter --compilers js:babel-register --recursive --require ./test/setup.js app/**/*.spec.js",
     "test-e2e": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --require ./test/setup.js ./test/e2e.js",
