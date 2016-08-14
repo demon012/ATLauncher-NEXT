@@ -8,7 +8,7 @@ The planning phase is the initial phase of the project and involves generation o
 - ~~Application wrapper to use [[#2](https://github.com/ATLauncher/ATLauncher-NEXT/issues/2)]~~
 - Application bootstrap/distribution [[#3](https://github.com/ATLauncher/ATLauncher-NEXT/issues/3)]
 - ~~Frontend UI framework to use [[#4](https://github.com/ATLauncher/ATLauncher-NEXT/issues/4)]~~
-- Testing framework, policies and methods to use [[#5](https://github.com/ATLauncher/ATLauncher-NEXT/issues/5)]
+- ~~Testing framework, policies and methods to use [[#5](https://github.com/ATLauncher/ATLauncher-NEXT/issues/5)]~~
 - UI design features/mockups [[#6](https://github.com/ATLauncher/ATLauncher-NEXT/issues/6)]
 - ~~Licensing [[#8](https://github.com/ATLauncher/ATLauncher-NEXT/issues/8)]~~
 - ~~Branching structure [[#9](https://github.com/ATLauncher/ATLauncher-NEXT/issues/9)]~~
