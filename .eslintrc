@@ -1,39 +1,38 @@
 {
     "parser": "babel-eslint",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
     "env": {
         "browser": true,
         "mocha": true,
         "node": true
     },
     "rules": {
-        "consistent-return": 0,
-        "comma-dangle": 0,
-        "no-use-before-define": 0,
-        "import/no-unresolved": [
-            2,
-            {
-                "ignore": ["electron"]
-            }
-        ],
-        "import/no-extraneous-dependencies": 0,
-        "react/jsx-no-bind": 0,
+        "no-console": "off",
+        "no-trailing-spaces": "error",
+        "no-multiple-empty-lines": "error",
+        "consistent-return": "error",
+        "comma-dangle": ["error", "never"],
+        "no-use-before-define": ["error", "nofunc"],
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "off",
+        "import/default": "off",
+        "import/newline-after-import": "error",
+        "import/imports-first": "error",
         "react/jsx-filename-extension": [
-            2,
+            "error",
             {
-                "extensions": [".js", ".jsx"]
+                "extensions": [".js"]
             }
         ],
-        "react/prefer-stateless-function": 0
+        "react/prefer-stateless-function": "off"
     },
     "plugins": [
         "import",
         "react"
-    ],
-    "settings": {
-        "import/resolver": {
-            "webpack": {
-                "config": "webpack.config.eslint.js"
-            }
-        }
-    }
+    ]
 }

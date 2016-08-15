@@ -39,12 +39,12 @@ function pack(plat, arch, cb) {
         ],
         icon: 'app/icon' + (() => {
             switch (plat) {
-                case 'linux':
-                    return '.png';
                 case 'win32':
                     return '.ico';
                 case 'darwin':
                     return '.icns';
+                default:
+                    return '.png';
             }
         })()
     };
@@ -74,49 +74,49 @@ function pack(plat, arch, cb) {
 
     packager(Object.assign({}, options, osOptions), (err) => {
         if (err) {
-            return cb(err);
-        }
+            cb(err);
+        } else {
+            const outputZip = `./dist/${pkg.productName}-${pkg.version}-${plat}-${arch}.zip`;
 
-        const outputZip = `./dist/${pkg.productName}-${pkg.version}-${plat}-${arch}.zip`;
+            if (fs.existsSync(outputZip)) {
+                fs.unlinkSync(outputZip);
+            }
 
-        if (fs.existsSync(outputZip)) {
-            fs.unlinkSync(outputZip);
-        }
+            let output = fs.createWriteStream(outputZip);
 
-        let output = fs.createWriteStream(outputZip);
+            output.on('open', () => {
+                let archive = archiver('zip');
+                const dirToZip = `./dist/${pkg.productName}-${plat}-${arch}`;
 
-        output.on('open', () => {
-            let archive = archiver('zip');
-            const dirToZip = `./dist/${pkg.productName}-${plat}-${arch}`;
+                output.on('close', () => {
+                    rimraf(dirToZip, cb);
+                });
 
-            output.on('close', () => {
-                rimraf(dirToZip, cb);
+                archive.on('error', (err) => {
+                    rimraf(dirToZip, () => cb(err));
+                });
+
+                archive.pipe(output);
+                archive.bulk([
+                    {
+                        expand: true,
+                        cwd: dirToZip,
+                        src: ['**'],
+                        dest: './'
+                    }
+                ]);
+                archive.finalize();
             });
-
-            archive.on('error', (err) => {
-                rimraf(dirToZip, () => cb(err));
-            });
-
-            archive.pipe(output);
-            archive.bulk([
-                {
-                    expand: true,
-                    cwd: dirToZip,
-                    src: ['**'],
-                    dest: './'
-                }
-            ]);
-            archive.finalize();
-        });
+        }
     });
 }
 
 function log(plat, arch) {
     return (err) => {
         if (err) {
-            return console.error(err);
+            console.error(err);
+        } else {
+            console.log(`${plat}-${arch} finished!`);
         }
-
-        console.log(`${plat}-${arch} finished!`);
     };
 }

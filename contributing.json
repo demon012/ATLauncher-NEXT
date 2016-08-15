@@ -1,0 +1,21 @@
+// https://gitmagic.io/rules
+{
+    "commit": {
+        "subject_cannot_be_empty": true
+    },
+    "pull_request": {
+        "subject_cannot_be_empty": true,
+        "body_cannot_be_empty": true
+    },
+    "issue": {
+        "subject_cannot_be_empty": true,
+        "body_cannot_be_empty": true,
+    },
+    "branch": {
+        "name_must_be_longer_than": 4,
+        "name_must_include_prefix": {
+            "prefixes": ["feature", "release", "hotfix"],
+            "require_after_prefix": "/"
+        }
+    }
+}

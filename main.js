@@ -1,4 +1,5 @@
-import {app, BrowserWindow, Menu, shell} from 'electron';
+import { app, BrowserWindow, Menu, shell } from 'electron';
+import installer from 'electron-devtools-installer';
 
 let menu;
 let template;
@@ -14,7 +15,6 @@ app.on('window-all-closed', () => {
 
 const installExtensions = async() => {
     if (process.env.NODE_ENV === 'development') {
-        const installer = require('electron-devtools-installer');
         const extensions = [
             'REACT_DEVELOPER_TOOLS',
             'REDUX_DEVTOOLS'
@@ -24,6 +24,7 @@ const installExtensions = async() => {
             try {
                 await installer.default(installer[name], forceDownload);
             } catch (e) {
+                // ignored
             }
         }
     }

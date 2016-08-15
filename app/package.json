@@ -1,34 +1,34 @@
 {
-    "name": "atlauncher-next",
-    "productName": "ATLauncher NEXT",
-    "version": "0.0.1",
-    "description": "ATLauncher NEXT",
-    "main": "main.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ATLauncher/ATLauncher-NEXT.git"
-    },
-    "author": {
-        "name": "RyanTheAllmighty",
-        "email": "ryantheallmighty@atlauncher.com",
-        "url": "https://github.com/RyanTheAllmighty"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ATLauncher/ATLauncher-NEXT/issues"
-    },
-    "homepage": "https://github.com/ATLauncher/ATLauncher-NEXT#readme",
-    "devEngines": {
-        "node": "4.x || 5.x || 6.x",
-        "npm": "2.x || 3.x"
-    },
-    "dependencies": {
-        "react": "^15.3.0",
-        "react-dom": "^15.3.0",
-        "react-redux": "^4.4.5",
-        "react-router": "^2.6.0",
-        "react-router-redux": "^4.0.5",
-        "redux": "^3.5.2",
-        "redux-saga": "^0.10.5"
-    }
+  "name": "atlauncher-next",
+  "productName": "ATLauncher NEXT",
+  "version": "0.0.1",
+  "description": "ATLauncher NEXT",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATLauncher/ATLauncher-NEXT.git"
+  },
+  "author": {
+    "name": "RyanTheAllmighty",
+    "email": "ryantheallmighty@atlauncher.com",
+    "url": "https://github.com/RyanTheAllmighty"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ATLauncher/ATLauncher-NEXT/issues"
+  },
+  "homepage": "https://github.com/ATLauncher/ATLauncher-NEXT#readme",
+  "devEngines": {
+    "node": "4.x || 5.x || 6.x",
+    "npm": "2.x || 3.x"
+  },
+  "dependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.0",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-saga": "^0.11.0"
+  }
 }

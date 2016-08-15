@@ -21,12 +21,23 @@ dependencies:
 
 test:
   override:
+     - npm run lint
      - npm run test-ci:
          environment:
            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
      - npm run test-e2e-ci:
          environment:
            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+
+deployment:
+  beta:
+    branch: develop
+    commands:
+      - npm publish --tag next
+  release:
+    branch: master
+    commands:
+      - npm publish
 
 general:
   branches:
