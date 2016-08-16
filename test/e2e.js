@@ -5,7 +5,7 @@ import electronPath from 'electron-prebuilt';
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
 describe('main window', function spec() {
-    this.timeout(50000);
+    this.timeout(5000);
 
     before(async() => {
         this.app = new Application({
