@@ -14,9 +14,7 @@
     "start": "cross-env NODE_ENV=production electron ./app/main.js",
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main",
     "test": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js app/**/*.spec.js",
-    "test-ci": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --reporter mocha-junit-reporter --compilers js:babel-register --recursive --require ./test/setup.js app/**/*.spec.js",
     "test-e2e": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --require ./test/setup.js ./test/e2e.js",
-    "test-e2e-ci": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --reporter mocha-junit-reporter --compilers js:babel-register --require ./test/setup.js ./test/e2e.js",
     "test-watch": "npm test -- --watch"
   },
   "bin": {
@@ -86,7 +84,6 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "mocha": "^2.5.3",
-    "mocha-junit-reporter": "^1.12.0",
     "node-libs-browser": "^1.0.0",
     "react-addons-test-utils": "^15.3.0",
     "rimraf": "^2.5.2",

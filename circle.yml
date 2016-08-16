@@ -22,12 +22,8 @@ dependencies:
 test:
   override:
      - npm run lint
-     - npm run test-ci:
-         environment:
-           MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
-     - npm run test-e2e-ci:
-         environment:
-           MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+     - npm run test
+     - npm run test-e2e
 
 deployment:
   beta:
@@ -46,5 +42,5 @@ general:
       - /feature\/.*/
       - /release\/.*/
       - /hotfix\/.*/
-  artifacts:
-    - "dist"
+      - master
+      - develop
