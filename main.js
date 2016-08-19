@@ -22,7 +22,7 @@ const installExtensions = async() => {
         ];
 
         const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-        
+
         for (const name of extensions) {
             try {
                 await installer.default(installer[name], forceDownload);
