@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {Application} from 'spectron';
-import electronPath from 'electron-prebuilt';
+import electronPath from 'electron';
 
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
