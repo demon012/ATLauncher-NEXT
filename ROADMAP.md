@@ -14,6 +14,7 @@ The planning phase is the initial phase of the project and involves generation o
 - ~~Branching structure [[#9](https://github.com/ATLauncher/ATLauncher-NEXT/issues/9)]~~
 - Styleguide [[#10](https://github.com/ATLauncher/ATLauncher-NEXT/issues/10)]
 - Build Process [[#13](https://github.com/ATLauncher/ATLauncher-NEXT/issues/13)]
+- Backend [[#15](https://github.com/ATLauncher/ATLauncher-NEXT/issues/15)]
 
 To contribute to these discussions and decisions, please do so in the linked issue for each step.
 
